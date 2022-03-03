@@ -40,6 +40,13 @@
         <div id='display-books' class="row">
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <h2 class="mx-auto my-4">Cart</h2>
+        </div>
+        <div id='cart' class="row">
+        </div>
+    </div>
 
 
 
@@ -69,7 +76,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">${element.title}</h5>
                                   <p class="card-text">Price: $${element.price}</p>
-                                  <a href="#" class="btn btn-primary">Add to cart</a>
+                                  <a href="#" class="btn btn-primary" id="add-to-cart">Add to cart</a>
                                   <a href="#" class="btn btn-warning">Skip</a>
                                 </div>
                             </div>
@@ -81,8 +88,15 @@
                     console.log(error)
                 })
         }
-
-
+        let cart = document.querySelector('#cart')
+        let card = document.querySelector('.card')
+        let addButton = document.querySelector('#add-to-cart')
+        addButton.addEventListener('click', function ()
+        {
+            let addedBook = document.createElement('div')
+            addedBook.innerHTML = card
+            cart.append(card)
+        })
 
 
     </script>
